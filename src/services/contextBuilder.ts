@@ -1,14 +1,9 @@
-import fg from 'fast-glob'
+import fg from 'fast-glob' // Biblioteca de buscas de arquivos usando padrões
 import fs from 'fs/promises'
 import path from 'path'
 
 import { DEFAULT_IGNORES } from '../utils/ignoreRules';
 
-export interface ContextStats {
-    fileCount: number;
-    lineCount: number;
-    outputSize: number;
-}
 
 export class ContextBuilder {
 
@@ -43,18 +38,7 @@ export class ContextBuilder {
 
         const tree = this.buildTree(files);
 
-        const markdown = `
-        #Projeto: ${projectName}
-
-        ##Estrutura
-
-
-        \`\`\`
-        ${tree}
-        \`\`\`
-
-        ${output}
-        `;
+        const markdown = `# Projeto: ${projectName}\n## Estrutura\n\`\`\`\n${tree}\n\`\`\`${output}`;
 
         return markdown;
     }

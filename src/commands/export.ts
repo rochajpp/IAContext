@@ -4,23 +4,26 @@ import path from 'path';
 import {ContextBuilder} from '../services/contextBuilder';
 
 export async function exportCommand(){
-    const projectPath = process.cwd();
+    const projectPath = process.cwd(); // Current Working Directory (Retorna a pasta atual)
 
     const builder = new ContextBuilder();
 
     const content = await builder.build(projectPath);
 
+    // Monta o caminho final no caso o path atual mais o nome do arquivo que no caso será project-context.md
     const outputFile = path.join(
         projectPath,
         'project-context.md'
     );
 
+    // Salva todos os dados vindos de ContextBuilder no output
     await fs.writeFile(
         outputFile,
         content,
         'utf8'
     );
 
+    // Coleta informações do arquivo
     const stats = await fs.stat(outputFile);
 
     console.log('\n Contexto gerado com sucesso');
