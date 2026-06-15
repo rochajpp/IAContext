@@ -8,7 +8,7 @@ const program = new Command();
 
 program
     .name('iacontext')
-    .version('1.1.6')
+    .version('1.1.0')
     .description('Gera contexto de projetos para IA');
 
 program
