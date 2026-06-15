@@ -4,8 +4,11 @@ export const DEFAULT_IGNORES = [
     '**/dist/**',
     '**/build/**',
     '**/.git/**',
+    '**/coverage/**',
+    
     '**/bin/**',
     '**/obj/**',
-    '**/coverage/**'
+    
+    '**/.env.*',
+    '**/.env'
 ];
-
