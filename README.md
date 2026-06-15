@@ -1,14 +1,14 @@
 # 🧠 IAContext
 
-IAContext é uma ferramenta de linha de comando que gera um arquivo contendo o contexto completo do seu projeto em formato Markdown.
+IAContext is a command-line tool that generates a single Markdown file containing the complete context of your project.
 
-O objetivo é facilitar o compartilhamento da estrutura e do código da aplicação com ferramentas de IA, permitindo análises mais precisas sem a necessidade de enviar arquivos manualmente.
+Its purpose is to simplify sharing your application's structure and source code with AI tools, enabling more accurate analysis without the need to manually upload multiple files.
 
 ---
 
-## 🚀 Instalação
+## 🚀 Installation
 
-Instale o pacote globalmente:
+Install the package globally:
 
 ```bash
 npm install -g iacontext
@@ -16,61 +16,61 @@ npm install -g iacontext
 
 ---
 
-## 📖 Uso
+## 📖 Usage
 
-Abra o terminal na raiz do projeto que deseja analisar e execute:
+Open a terminal in the root directory of the project you want to analyze and run:
 
 ```bash
 iacontext export
 ```
 
-Após a execução, será gerado automaticamente um arquivo:
+After execution, a file named:
 
 ```text
 project-context.md
 ```
 
-na raiz do projeto.
+will be automatically generated in the project's root directory.
 
 ---
 
-## 📄 O que é gerado?
+## 📄 What is generated?
 
-O arquivo `project-context.md` contém:
+The `project-context.md` file contains:
 
-* Estrutura dos arquivos do projeto.
-* Conteúdo consolidado dos arquivos encontrados.
-* Contexto organizado em um único documento Markdown.
+* Project file structure
+* Consolidated content of the detected files
+* A complete project context organized in Markdown format
 
-Isso facilita o envio do contexto completo para ferramentas de IA como ChatGPT, Claude, Gemini e outras.
-
----
-
-## 💡 Casos de uso
-
-Com o arquivo gerado, você pode solicitar ajuda para:
-
-* 🐛 Correção de bugs
-* 🏗️ Arquitetura e organização do projeto
-* ✨ Refatorações
-* 📚 Geração de documentação
-* 🔍 Revisão de código
-* 🚀 Implementação de novas funcionalidades
+This makes it easier to provide your project context to AI tools such as ChatGPT, Claude, Gemini, and others.
 
 ---
 
-## 📦 Exemplo
+## 💡 Use Cases
+
+With the generated file, you can ask AI assistants for help with:
+
+* 🐛 Bug fixing
+* 🏗️ Project architecture and organization
+* ✨ Refactoring
+* 📚 Documentation generation
+* 🔍 Code review
+* 🚀 New feature implementation
+
+---
+
+## 📦 Example
 
 ```bash
-cd meu-projeto
+cd my-project
 
 iacontext export
 ```
 
-Resultado:
+Result:
 
 ```text
-meu-projeto/
+my-project/
 ├── src/
 ├── package.json
 ├── README.md
@@ -79,9 +79,9 @@ meu-projeto/
 
 ---
 
-## ⚙️ Arquivos ignorados
+## ⚙️ Ignored Directories
 
-Por padrão, o IAContext ignora diretórios comuns que normalmente não fazem parte do contexto do projeto:
+By default, IAContext ignores common directories that usually do not contribute to the project's source context:
 
 * `node_modules`
 * `dist`
@@ -93,7 +93,6 @@ Por padrão, o IAContext ignora diretórios comuns que normalmente não fazem pa
 
 ---
 
-## 📜 Licença
+## 📜 License
 
 ISC
-
