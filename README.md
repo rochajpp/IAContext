@@ -91,6 +91,18 @@ By default, IAContext ignores common directories that usually do not contribute 
 * `bin`
 * `obj`
 * `.env`
+* `.png`
+* `.jpg`
+* `.jpeg`
+* `.gif`
+* `.mp4`
+* `.svg`
+* `.webp`
+* `.ico`
+* `.pdf`
+* `.zip`
+* `.rar`
+* `.7z`
 
 ---
 

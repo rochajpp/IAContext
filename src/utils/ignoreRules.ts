@@ -20,7 +20,6 @@ export const DEFAULT_IGNORES = [
     '**/*.svg',
 
     '**/*.webp',
-    '**/*.svg',
     '**/*.ico',
     '**/*.pdf',
     '**/*.zip',
