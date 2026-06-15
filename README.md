@@ -90,6 +90,7 @@ By default, IAContext ignores common directories that usually do not contribute 
 * `coverage`
 * `bin`
 * `obj`
+* `.env`
 
 ---
 
