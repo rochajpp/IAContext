@@ -24,5 +24,7 @@ export const DEFAULT_IGNORES = [
     '**/*.pdf',
     '**/*.zip',
     '**/*.rar',
-    '**/*.7z'
+    '**/*.7z',
+
+    '**/project-context.md'
 ];

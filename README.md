@@ -1,8 +1,8 @@
 # 🧠 IAContext
 
-IAContext is a command-line tool that generates a single Markdown file containing the complete context of your project.
+IAContext is a command-line tool that generates a single Markdown file containing your project's complete context.
 
-Its purpose is to simplify sharing your application's structure and source code with AI tools, enabling more accurate analysis without the need to manually upload multiple files.
+Its purpose is to simplify sharing your application's structure and source code with AI assistants, enabling more accurate analysis without manually selecting and uploading multiple files.
 
 ---
 
@@ -24,25 +24,41 @@ Open a terminal in the root directory of the project you want to analyze and run
 iacontext export
 ```
 
-After execution, a file named:
+This command scans the current directory and generates a file named:
 
 ```text
 project-context.md
 ```
 
-will be automatically generated in the project's root directory.
+You can also specify a custom path:
+
+```bash
+iacontext export <path>
+```
+
+Examples:
+
+```bash
+iacontext export src
+```
+
+```bash
+iacontext export ../another-project
+```
+
+The generated file is always created in the directory where the command is executed.
 
 ---
 
-## 📄 What is generated?
+## 📄 What is Generated?
 
 The `project-context.md` file contains:
 
 * Project file structure
-* Consolidated content of the detected files
-* A complete project context organized in Markdown format
+* Consolidated content of detected files
+* A complete project context organized in Markdown
 
-This makes it easier to provide your project context to AI tools such as ChatGPT, Claude, Gemini, and others.
+This makes it easier to provide context to AI assistants such as ChatGPT, Claude, Gemini, and others.
 
 ---
 
@@ -51,15 +67,17 @@ This makes it easier to provide your project context to AI tools such as ChatGPT
 With the generated file, you can ask AI assistants for help with:
 
 * 🐛 Bug fixing
-* 🏗️ Project architecture and organization
+* 🏗️ Architecture and project organization
 * ✨ Refactoring
 * 📚 Documentation generation
-* 🔍 Code review
-* 🚀 New feature implementation
+* 🔍 Code reviews
+* 🚀 Feature implementation
 
 ---
 
-## 📦 Example
+## 📦 Examples
+
+Generate context for the current project:
 
 ```bash
 cd my-project
@@ -67,21 +85,55 @@ cd my-project
 iacontext export
 ```
 
-Result:
+Generate context for a specific directory:
+
+```bash
+iacontext export src
+```
+
+Generate context for a specific folder:
+
+```bash
+iacontext export src/controllers
+```
+
+In this example, IAContext will analyze only the files contained within the `src/controllers` directory.
+
+Relative paths are always resolved from the directory where the command is executed.
+
+For example, if the command is executed from:
 
 ```text
-my-project/
-├── src/
-├── package.json
-├── README.md
-└── project-context.md
+C:/projects/my-app
 ```
+
+and you run:
+
+```bash
+iacontext export src/controllers
+```
+
+IAContext will analyze:
+
+```text
+C:/projects/my-app/src/controllers
+```
+
+After the process completes, a file named:
+
+```text
+project-context.md
+```
+
+will be generated in the current working directory.
 
 ---
 
-## ⚙️ Ignored Directories
+## ⚙️ Ignored Files and Directories
 
-By default, IAContext ignores common directories that usually do not contribute to the project's source context:
+By default, IAContext ignores files and directories that usually do not contribute meaningful source-code context:
+
+### Directories
 
 * `node_modules`
 * `dist`
@@ -90,7 +142,14 @@ By default, IAContext ignores common directories that usually do not contribute 
 * `coverage`
 * `bin`
 * `obj`
+
+### Environment Files
+
 * `.env`
+* `.env.*`
+
+### Binary and Media Files
+
 * `.png`
 * `.jpg`
 * `.jpeg`
@@ -103,6 +162,10 @@ By default, IAContext ignores common directories that usually do not contribute 
 * `.zip`
 * `.rar`
 * `.7z`
+
+### Generated Files
+
+* `project-context.md`
 
 ---
 

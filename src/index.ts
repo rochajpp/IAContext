@@ -7,15 +7,21 @@ import {exportCommand} from './commands/export'
 const program = new Command();
 
 program
-    .name('aicontext')
-    .version('1.0.0')
+    .name('iacontext')
+    .version('1.1.6')
     .description('Gera contexto de projetos para IA');
 
 program
-    .command('export')
+    .command('export [path]')
     .description(
         'Gera o arquivo project-context.md'
     )
-    .action(exportCommand);
+    .action((path:string) => {
+        exportCommand(path);
+    });
+
 
 program.parse();
+
+
+
