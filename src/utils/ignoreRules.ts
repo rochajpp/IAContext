@@ -5,10 +5,25 @@ export const DEFAULT_IGNORES = [
     '**/build/**',
     '**/.git/**',
     '**/coverage/**',
-    
+
     '**/bin/**',
     '**/obj/**',
-    
+
     '**/.env.*',
-    '**/.env'
+    '**/.env',
+
+    '**/*.png',
+    '**/*.jpg',
+    '**/*.jpeg',
+    '**/*.gif',
+    '**/*.mp4',
+    '**/*.svg',
+
+    '**/*.webp',
+    '**/*.svg',
+    '**/*.ico',
+    '**/*.pdf',
+    '**/*.zip',
+    '**/*.rar',
+    '**/*.7z'
 ];
